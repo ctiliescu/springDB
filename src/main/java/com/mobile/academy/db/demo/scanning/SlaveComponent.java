@@ -4,8 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SlaveComponent {
-
     public SlaveComponent() {
-        System.out.println("----------------->Slave");
+        System.out.println("------------------------> SlaveComponent");
     }
 }
