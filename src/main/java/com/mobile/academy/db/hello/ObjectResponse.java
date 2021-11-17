@@ -1,5 +1,10 @@
 package com.mobile.academy.db.hello;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ObjectResponse {
     private String message;
     private String name;
@@ -7,13 +12,5 @@ public class ObjectResponse {
     public ObjectResponse(String message, String name) {
         this.message = message;
         this.name = name;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public String getName() {
-        return name;
     }
 }

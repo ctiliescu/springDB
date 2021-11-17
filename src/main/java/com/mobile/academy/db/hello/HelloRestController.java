@@ -1,5 +1,6 @@
 package com.mobile.academy.db.hello;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping("api/v1")
 public class HelloRestController {
+    @Autowired
+    private HelloService helloService;
 
     @GetMapping("/hello/{nameFromPath}")
     @ResponseStatus(HttpStatus.OK)
@@ -32,6 +35,7 @@ public class HelloRestController {
                                             @RequestParam(name = "customparam") String p) {
         System.out.println(s);
         System.out.println(p);
-        return new ResponseEntity<>("hello " +objectResponse.getMessage() + objectResponse.getName(), HttpStatus.CREATED);
+        String result = helloService.helloMessage(objectResponse);
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 }
