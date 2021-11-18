@@ -5,6 +5,7 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>users</module>
+		<module>hello</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -13,9 +14,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.mobile.academy</groupId>
-	<artifactId>db</artifactId>
+	<artifactId>com.mobile.academy.db</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>db</name>
+	<name>com.mobile.academy.db</name>
 	<description>DB demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -38,12 +39,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.mobile.academy</groupId>
-			<artifactId>users</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 

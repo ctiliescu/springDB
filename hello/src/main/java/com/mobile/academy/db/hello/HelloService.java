@@ -3,6 +3,7 @@ package com.mobile.academy.db.hello;
 import com.mobile.academy.db.multiplebeans.DisplayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
@@ -23,7 +24,7 @@ public class HelloService {
     private DisplayService displayService_First;
 
     public HelloService() {
-        System.out.println(" ------> Create HelloService");
+        System.out.println(" ------> Create HelloService " );
     }
 
     @PreDestroy
