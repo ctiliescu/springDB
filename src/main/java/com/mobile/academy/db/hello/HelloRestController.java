@@ -15,6 +15,10 @@ public class HelloRestController {
     @Autowired
     private HelloService helloService;
 
+    public HelloRestController() {
+        System.out.println(" ------> Create HelloRestController");
+    }
+
     @GetMapping("/hello/{nameFromPath}")
     @ResponseStatus(HttpStatus.OK)
     ObjectResponse hello(HttpServletResponse response,
@@ -26,6 +30,7 @@ public class HelloRestController {
 
         // set status code example to response
         // response.setStatus(309);
+
         return new ObjectResponse("hello", nameFromPath);
     }
 
