@@ -1,6 +1,7 @@
 package com.mobile.academy.db.hello;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,9 @@ public class HelloRestController {
     public HelloRestController() {
         System.out.println(" ------> Create HelloRestController");
     }
+
+    @Autowired
+    private ApplicationContext appContext;
 
     @GetMapping("/hello/{nameFromPath}")
     @ResponseStatus(HttpStatus.OK)
