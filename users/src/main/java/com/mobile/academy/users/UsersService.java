@@ -1,10 +1,12 @@
 package com.mobile.academy.users;
 
+import com.mobile.academy.core.CoreDisplayMessage;
 import org.springframework.stereotype.Service;
+
 
 @Service
 public class UsersService {
     public UsersService() {
-        System.out.println("------------------------> Init UsersService from external module");
+        CoreDisplayMessage.display("Init User Service");
     }
 }

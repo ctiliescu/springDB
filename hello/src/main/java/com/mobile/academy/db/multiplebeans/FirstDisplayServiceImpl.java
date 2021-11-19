@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Locale;
 
 @Service("FirstDisplayServiceImpl")
-@Profile("dev")
+//@Profile("dev")
 public class FirstDisplayServiceImpl implements  DisplayService {
     @Override
     public String getName() {

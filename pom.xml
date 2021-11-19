@@ -6,6 +6,7 @@
 	<modules>
 		<module>users</module>
 		<module>hello</module>
+		<module>core</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
