@@ -1,4 +1,4 @@
-package com.mobile.academy.users.repository;
+package com.mobile.academy.users.user.service.repository;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name="users")
 @Getter
 @Setter
-public class User {
+public class UserDao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
