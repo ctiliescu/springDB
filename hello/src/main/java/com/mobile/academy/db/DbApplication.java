@@ -6,8 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {
-		"com.mobile.academy.db",
-		"com.mobile.academy.users"
+		"com.mobile.academy.db"
 })
 public class DbApplication {
 	public static void main(String[] args) {
