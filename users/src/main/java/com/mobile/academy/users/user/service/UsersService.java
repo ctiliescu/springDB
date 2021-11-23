@@ -9,4 +9,6 @@ public interface UsersService {
     void createNewUser(CreateUserRequest createUserRequest);
 
     List<UserDao> getAllUsers();
+
+    UserDao getUserByLastName(String lastName);
 }

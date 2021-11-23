@@ -36,4 +36,11 @@ public class UsersServiceImpl implements UsersService {
     public List<UserDao> getAllUsers() {
         return userRepository.findAll();
     }
+
+    @Override
+    public UserDao getUserByLastName(String lastName) {
+        return userRepository.findByLaaastName(lastName);
+    }
+
+
 }
