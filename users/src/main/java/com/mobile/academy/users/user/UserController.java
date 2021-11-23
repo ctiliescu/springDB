@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UserController {
@@ -29,6 +30,15 @@ public class UserController {
     private ResponseEntity<UserDao> getUserByLastName(@RequestParam(name = "lastName") String lastName) {
         UserDao userByLastName = usersService.getUserByLastName(lastName);
         return ResponseEntity.ok(userByLastName);
+
+//        Optional<UserDao> userByLastNamOp = usersService.getUserByLastNamOp(lastName);
+//        if(userByLastNamOp.isPresent()) {
+//            return ResponseEntity.ok(userByLastNamOp.get());
+//        }
+//        return (ResponseEntity<UserDao>) ResponseEntity.notFound();
+
+//        return usersService.getUserByLastNamOp(lastName).map(uD -> ResponseEntity.ok(uD))
+//                .orElseGet(() -> (ResponseEntity<UserDao>) ResponseEntity.notFound());
     }
 
 }
