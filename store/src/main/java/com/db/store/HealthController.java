@@ -1,4 +1,4 @@
-package com.db.project;
+package com.db.store;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
