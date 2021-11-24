@@ -1,6 +1,7 @@
 package com.mobile.academy.users.user;
 
 import com.mobile.academy.users.user.model.CreateUserRequest;
+import com.mobile.academy.users.user.model.UserNotFoundException;
 import com.mobile.academy.users.user.service.UsersService;
 import com.mobile.academy.users.user.service.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,18 +28,17 @@ public class UserController {
     }
 
     @GetMapping("/user/search")
-    private ResponseEntity<UserDao> getUserByLastName(@RequestParam(name = "lastName") String lastName) {
-        UserDao userByLastName = usersService.getUserByLastName(lastName);
-        return ResponseEntity.ok(userByLastName);
+    private UserDao getUserByLastName(@RequestParam(name = "lastName") String lastName) throws UserNotFoundException {
+//        UserDao userByLastName = usersService.getUserByLastName(lastName);
+//        return ResponseEntity.ok(userByLastName);
 
 //        Optional<UserDao> userByLastNamOp = usersService.getUserByLastNamOp(lastName);
 //        if(userByLastNamOp.isPresent()) {
-//            return ResponseEntity.ok(userByLastNamOp.get());
+//            return userByLastNamOp.get();
 //        }
-//        return (ResponseEntity<UserDao>) ResponseEntity.notFound();
+//        throw new UserNotFoundException();
 
-//        return usersService.getUserByLastNamOp(lastName).map(uD -> ResponseEntity.ok(uD))
-//                .orElseGet(() -> (ResponseEntity<UserDao>) ResponseEntity.notFound());
+        return usersService.getUserByLastNamOp(lastName).orElseThrow(UserNotFoundException::new);
     }
 
 }
