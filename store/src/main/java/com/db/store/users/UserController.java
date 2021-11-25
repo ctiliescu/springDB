@@ -14,9 +14,6 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @Autowired
-    PaymentService paymentService;
-
     @PostMapping
     UserEntity createUser(@RequestBody User user) {
         UserEntity userEntity = userService.createUser(user);
@@ -31,7 +28,8 @@ public class UserController {
     }
 
     @PostMapping("/{userId}/paymentDetails")
-    public void addPaymentDetails(@RequestBody PaymentDetails paymentDetails) throws InvalidPaymentDetailsException {
-        paymentService.checkCardDetails(paymentDetails);
+    public void addPaymentDetails(@RequestBody PaymentDetails paymentDetails,
+                                  @PathVariable long userId) throws InvalidPaymentDetailsException, UserNotFoundException {
+        userService.addPaymentDetails(userId, paymentDetails);
     }
 }

@@ -6,8 +6,8 @@ import org.springframework.stereotype.Service;
 import java.util.Random;
 
 @Service
-public class PaymentService {
-    public void checkCardDetails(PaymentDetails paymentDetails) throws InvalidPaymentDetailsException {
+public class PaymentIntegrationService {
+    public void checkCardDetails(CardDetails cardDetails) throws InvalidPaymentDetailsException {
         int randInt = new Random().nextInt(5);
         if (randInt < 3)
             throw new InvalidPaymentDetailsException();
