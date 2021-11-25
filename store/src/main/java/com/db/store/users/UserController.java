@@ -1,5 +1,6 @@
 package com.db.store.users;
 
+import com.db.store.exceptions.InvalidPaymentDetailsException;
 import com.db.store.exceptions.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    PaymentService paymentService;
+
     @PostMapping
     UserEntity createUser(@RequestBody User user) {
         UserEntity userEntity = userService.createUser(user);
@@ -24,5 +28,10 @@ public class UserController {
     UserEntity getUserByEmail(@RequestParam String email) throws UserNotFoundException {
         log.info("search for user: " + email);
         return userService.getUserByEmail(email);
+    }
+
+    @PostMapping("/{userId}/paymentDetails")
+    public void addPaymentDetails(@RequestBody PaymentDetails paymentDetails) throws InvalidPaymentDetailsException {
+        paymentService.checkCardDetails(paymentDetails);
     }
 }
