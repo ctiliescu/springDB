@@ -1,5 +1,6 @@
 package com.db.store.users;
 
+import com.db.store.exceptions.UserNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class UserController {
     }
 
     @GetMapping
-    UserEntity getUserByEmail(@RequestParam String email){
+    UserEntity getUserByEmail(@RequestParam String email) throws UserNotFoundException {
         log.info("search for user: " + email);
         return userService.getUserByEmail(email);
     }
