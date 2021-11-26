@@ -1,10 +1,9 @@
-package com.db.store.users;
+package com.db.store.payments.integration;
 
 import com.db.store.exceptions.InvalidPaymentDetailsException;
+import com.db.store.payments.model.CardDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Random;
 
 @Service
 public class PaymentIntegrationService {

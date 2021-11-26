@@ -1,4 +1,4 @@
-package com.db.store.users;
+package com.db.store.users.model;
 
 import lombok.Getter;
 import lombok.Setter;

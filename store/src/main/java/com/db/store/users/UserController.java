@@ -2,6 +2,10 @@ package com.db.store.users;
 
 import com.db.store.exceptions.InvalidPaymentDetailsException;
 import com.db.store.exceptions.UserNotFoundException;
+import com.db.store.payments.model.PaymentDetails;
+import com.db.store.users.model.User;
+import com.db.store.users.model.UserEntity;
+import com.db.store.users.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

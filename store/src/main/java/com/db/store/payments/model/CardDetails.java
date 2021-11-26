@@ -1,4 +1,4 @@
-package com.db.store.users;
+package com.db.store.payments.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

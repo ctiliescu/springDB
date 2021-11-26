@@ -1,7 +1,13 @@
-package com.db.store.users;
+package com.db.store.users.service;
 
 import com.db.store.exceptions.InvalidPaymentDetailsException;
 import com.db.store.exceptions.UserNotFoundException;
+import com.db.store.payments.PaymentRepository;
+import com.db.store.payments.model.CardDetails;
+import com.db.store.payments.model.PaymentDetails;
+import com.db.store.payments.model.PaymentDetailsEntity;
+import com.db.store.users.model.*;
+import com.db.store.payments.integration.PaymentIntegrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

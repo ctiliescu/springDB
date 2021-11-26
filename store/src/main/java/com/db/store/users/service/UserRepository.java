@@ -1,5 +1,6 @@
-package com.db.store.users;
+package com.db.store.users.service;
 
+import com.db.store.users.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

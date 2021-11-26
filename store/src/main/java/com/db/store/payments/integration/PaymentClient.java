@@ -1,5 +1,6 @@
-package com.db.store.users;
+package com.db.store.payments.integration;
 
+import com.db.store.payments.model.CardDetails;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 
